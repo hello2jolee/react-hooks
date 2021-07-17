@@ -1,19 +1,13 @@
 import React, { useState } from "react";
-
-const useInput = (initialValue) => {
-  const [value, setValue] = useState(initialValue);
-  const onChange = (event) => {
-    setValue(event.target);
-  };
-  return { value, onChange };
-};
+import useInput from './hooks/useInput'
 
 function App() {
   const [item, setItem] = useState(1);
   const incrementItem = () => setItem(item + 1);
   const decrementItem = () => setItem(item - 1);
 
-  const name = useInput("Ms.");
+  const maxLen = (value) => value.length < 10;
+  const name = useInput("Ms.", maxLen);
 
   return (
     <div className="App">
