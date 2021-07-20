@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useInput } from "./hooks/useInput";
 import { useTabs } from "./hooks/useTabs";
 import { useTitle } from "./hooks/useTitle";
+import { useClick } from "./hooks/useClick";
 
 const content = [
   { tab: "Section 1", content: "I'm the content of the Section 1" },
@@ -24,8 +25,16 @@ function App() {
   const titleUpdater = useTitle("Loading...");
   setTimeout(() => titleUpdater("Home"), 5000);
 
+  // useClick
+  const sayHello = () => console.log("say hello");
+  const title = useClick(sayHello);
+
   return (
     <div className="App">
+      {/* [S] useClick  */}
+      <h1 ref={title}>HI</h1>
+      {/* [E] useClick  */}
+
       {/* [S] useTitle */}
       <div>HI</div>
       {/* [E] useTitle */}
