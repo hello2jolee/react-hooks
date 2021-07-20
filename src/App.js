@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import useInput from "./hooks/useInput";
-import useTabs from "./hooks/useTabs";
+import { useInput } from "./hooks/useInput";
+import { useTabs } from "./hooks/useTabs";
 
 const content = [
   { tab: "Section 1", content: "I'm the content of the Section 1" },
